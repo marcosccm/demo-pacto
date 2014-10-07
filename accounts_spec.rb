@@ -1,10 +1,17 @@
+require_relative './accounts'
 require 'json'
-require 'faraday'
+require 'rack/test'
 
 describe 'accounts service' do
-  it 'works well' do
-    accounts = JSON.parse(Faraday.get('http://localhost:5000/accounts').body)
+  include Rack::Test::Methods
 
+  def app
+    Sinatra::Application
+  end
+
+  it 'works well' do
+    get '/accounts'
+    accounts = JSON.parse(last_response.body)
     expect(accounts.size).to eq(1)
   end
 end
