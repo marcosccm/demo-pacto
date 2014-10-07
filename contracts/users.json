@@ -1,0 +1,36 @@
+{
+  "request": {
+    "headers": {
+    },
+    "method": "get",
+    "path": "/users"
+  },
+  "response": {
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "status": 200,
+    "body": {
+      "$schema": "http://json-schema.org/draft-03/schema#",
+      "description": "Generated from http://localhost:4567/accounts with shasum 4d8b2a9d4680d683fde183a6e46754df7cf92304",
+      "type": "array",
+      "required": true,
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "age": {
+            "type": "integer",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}
